@@ -1,0 +1,27 @@
+{
+  "name": "mkgraph",
+  "version": "1.0.0",
+  "description": "Graphs!",
+  "main": "index.js",
+  "scripts": {
+    "cover": "tap test/*.js --cov --coverage-report=html",
+    "lint": "standard",
+    "test": "tap test/*.js --100 && standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emkay/mkgraph.git"
+  },
+  "keywords": ["graphs", "vertices", "edges", "bfs", "breadth first search"],
+  "author": "Michael Matuzak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emkay/mkgraph/issues"
+  },
+  "homepage": "https://github.com/emkay/mkgraph#readme",
+  "devDependencies": {
+    "standard": "^10.0.2",
+    "standard-version": "^4.0.0",
+    "tap": "^10.3.2"
+  }
+}
