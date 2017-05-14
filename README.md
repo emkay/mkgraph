@@ -22,6 +22,6 @@ g.drawEdge('b', 'c')
 g.shortestPath('a', 'c') // ['a', 'b', 'c']
 ```
 
-## Code of Conduct
+## [Code of Conduct](https://github.com/emkay/mkgraph/blob/master/CODE_OF_CONDUCT.md)
 
-## Contributing
+## [Contributing](https://github.com/emkay/mkgraph/blob/master/CONTRIBUTING.md)
