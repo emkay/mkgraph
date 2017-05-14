@@ -6,14 +6,27 @@
   "scripts": {
     "cover": "tap test/*.js --cov --coverage-report=html",
     "lint": "standard",
-    "test": "tap test/*.js --100 && standard"
+    "release": "git checkout master; git pull origin master && npm run test && standard-version && git push --follow-tags origin master; npm5 publish",
+    "test": "tap test/*.js --100 && standard",
+    "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+    "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emkay/mkgraph.git"
   },
-  "keywords": ["graphs", "vertices", "edges", "bfs", "breadth first search"],
-  "author": "Michael Matuzak",
+  "keywords": [
+    "graphs",
+    "vertices",
+    "edges",
+    "bfs",
+    "breadth first search"
+  ],
+  "author": {
+    "name": "Michael Matuzak",
+    "email": "mmatuzak@gmail.com",
+    "twitter": "@mmatuzak"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/emkay/mkgraph/issues"
@@ -22,6 +35,8 @@
   "devDependencies": {
     "standard": "^10.0.2",
     "standard-version": "^4.0.0",
-    "tap": "^10.3.2"
+    "tap": "^10.3.2",
+    "weallbehave": "^1.0.3",
+    "weallcontribute": "^1.0.8"
   }
 }
