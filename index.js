@@ -43,6 +43,20 @@ class Graph {
     }
   }
 
+  dfs (rootValue, visited) {
+    visited = visited || new Set()
+    const node = this.nodes[rootValue]
+
+    visited.add(node.value)
+    node.relationships.forEach(n => {
+      if (!visited.has(n)) {
+        return this.dfs(n, visited)
+      }
+    })
+
+    return visited
+  }
+
   shortestPath (rootValue, value) {
     let result = this.bfs(rootValue, value)
     const path = []

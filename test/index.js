@@ -54,3 +54,18 @@ tap.test('setup empty graph', t => {
 
   t.equal(g.nodes['a'].value, 'a', 'should be a Node with value `a`')
 })
+
+tap.test('dfs', t => {
+  t.plan(1)
+
+  const g = setup()
+  g.add('e')
+  g.drawEdge('a', 'b')
+  g.drawEdge('b', 'c')
+  g.drawEdge('c', 'd')
+  g.drawEdge('d', 'a')
+  g.drawEdge('e', 'a')
+
+  const s = g.dfs('c')
+  t.equal(s.has('a'), true, 'should have value c')
+})
